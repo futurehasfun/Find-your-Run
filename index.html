@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>READY TO RUN — Wireframe</title>
+<title>FIND YOUR RUN — Assignment Wireframe</title>
 <style>
   :root{
     /* Color */
@@ -45,12 +45,6 @@
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 0;}
   a{color:inherit;text-decoration:none;}
   button{font-family:inherit;cursor:pointer;}
-
-  /* Wireframe annotation banner */
-  .wf-note{
-    background:#1A1A1A;color:#fff;text-align:center;
-    font-size:12px;letter-spacing:.04em;padding:6px 0;
-  }
 
   /* ---------- Image placeholder ---------- */
   .ph{
@@ -112,6 +106,7 @@
   }
   .sticky-stage-nav .stage-inner{
     min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px;
+    padding-left:24px;padding-right:24px;
   }
   .stage-label{
     font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);
@@ -150,42 +145,9 @@
   .card-body{font-size:14px;color:var(--text-2);margin:0;}
 
   /* =================================================================
-     HEADER
-  ================================================================= */
-  header.site{
-    position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--border);
-  }
-  .nav{
-    height:72px;display:flex;align-items:center;gap:32px;
-  }
-  .logo{
-    font-size:18px;font-weight:800;letter-spacing:.04em;border:1px solid var(--border);
-    border-radius:8px;padding:8px 14px;white-space:nowrap;
-  }
-  .nav-menu{display:flex;gap:26px;flex:1;}
-  .nav-menu a{font-size:14px;font-weight:600;color:var(--text-2);}
-  .nav-menu a:hover{color:var(--text-1);}
-  .nav-right{display:flex;align-items:center;gap:14px;}
-  .search{
-    display:flex;align-items:center;gap:8px;border:1px solid var(--border);
-    border-radius:var(--pill);padding:8px 14px;color:var(--text-3);min-width:200px;font-size:13px;
-  }
-  .icon-btn{
-    width:40px;height:40px;border-radius:var(--pill);border:1px solid var(--border);
-    background:#fff;display:flex;align-items:center;justify-content:center;color:var(--text-2);
-    position:relative;
-  }
-  .icon-btn .badge{
-    position:absolute;top:-4px;right:-4px;background:var(--text-1);color:#fff;
-    font-size:10px;font-weight:700;border-radius:var(--pill);min-width:16px;height:16px;
-    display:flex;align-items:center;justify-content:center;padding:0 4px;
-  }
-  svg{display:block;}
-
-  /* =================================================================
      HERO
   ================================================================= */
-  .hero{padding:80px 0 0;}
+  .hero{padding:80px 0 88px;}
   .hero .wrap{max-width:none;padding:0;}
   .hero-grid{display:flex;flex-direction:column;gap:40px;align-items:stretch;}
   .hero-copy{max-width:var(--maxw);width:100%;margin:0 auto;padding:0 40px;}
@@ -193,12 +155,15 @@
   .hero h1{font-size:48px;font-weight:700;line-height:1.05;letter-spacing:-.02em;margin:0 0 20px;}
   .hero-message{font-size:22px;font-weight:700;color:var(--text-1);line-height:1.35;margin:0 0 20px;max-width:760px;}
   .hero .sub{font-size:16px;color:var(--text-2);margin:0;max-width:560px;}
-  .hero-mood-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;width:100%;padding:0 24px;}
+  .hero-mood-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;width:100%;max-width:var(--maxw);margin:0 auto;padding:0;}
   .hero-mood-card{height:460px;font-size:13px;border-radius:16px;}
   .hero-mood-card:first-child{grid-column:1 / -1;height:620px;}
   .hero-mood-card span{font-size:13px;font-weight:700;line-height:1.6;}
-  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;max-width:var(--maxw);width:100%;margin:0 auto;padding:0 40px;}
-  .hero-img{width:100%;height:560px;font-size:13px;border-radius:0;border-left:none;border-right:none;}
+  .hero-cta{
+    display:flex;gap:12px;flex-wrap:wrap;max-width:var(--maxw);width:100%;
+    margin:0 auto;padding:0 40px;
+    position:relative;z-index:1;
+  }
 
   /* =================================================================
      QUICK GUIDE cards
@@ -206,7 +171,8 @@
   .guide-card{display:flex;flex-direction:column;}
   .guide-card .ph{height:150px;margin-bottom:18px;}
   .guide-card .btn-small{margin-top:auto;}
-  .guide-cat{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 20px;}
+  .guide-cat{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 20px;font-size:13px;font-weight:700;color:var(--text-3);}
+  .guide-cat span{border:none;background:transparent;padding:0;color:var(--text-3);font-size:13px;font-weight:700;}
 
   /* =================================================================
      HIGHLIGHT 01 — split + carousel
@@ -215,7 +181,6 @@
   .hl-img{height:360px;font-size:13px;}
   .hl-title{font-size:28px;font-weight:700;margin:0 0 12px;letter-spacing:-.01em;}
   .hl-copy{font-size:16px;color:var(--text-2);margin:0 0 22px;}
-  .criteria{display:flex;gap:8px;flex-wrap:wrap;}
   .category-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px;}
   .category-tab{
     display:inline-flex;align-items:center;justify-content:center;
@@ -226,7 +191,6 @@
   .product-panels{position:relative;}
   .product-panel{display:none;}
   .product-panel.active{display:block;}
-
   /* carousel */
   .carousel{position:relative;}
   .carousel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
@@ -237,129 +201,417 @@
     background:#fff;color:var(--text-2);display:flex;align-items:center;justify-content:center;
   }
 
-  /* ---------- Horizontal swipe product rows ---------- */
-  .swipe-note{
-    font-size:12px;color:var(--text-3);font-weight:500;
-  }
-  .product-scroll{
-    display:flex;gap:var(--gutter);overflow-x:auto;overflow-y:hidden;
-    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
-    padding:2px 2px 16px;margin:0 -2px;
-  }
-  .product-scroll::-webkit-scrollbar{height:6px;}
-  .product-scroll::-webkit-scrollbar-track{background:#EFEFEF;border-radius:var(--pill);}
-  .product-scroll::-webkit-scrollbar-thumb{background:#C7C7C7;border-radius:var(--pill);}
-  .product-scroll > .pcard{
-    flex:0 0 276px;min-width:276px;scroll-snap-align:start;
-  }
-  .product-scroll.compact-row > .pcard{
-    flex-basis:260px;min-width:260px;
-  }
-
-  /* ---------- Product card ---------- */
-  .pcard{
-    background:#fff;border:1px solid var(--card-border);border-radius:var(--radius);
-    overflow:hidden;display:flex;flex-direction:column;
-  }
-  .pcard .pimg{position:relative;height:230px;border:none;border-radius:0;border-bottom:1px solid var(--card-border);}
-  .pcard .pimg .wish{
-    position:absolute;top:10px;right:10px;width:32px;height:32px;border-radius:var(--pill);
-    background:rgba(255,255,255,.9);border:1px solid var(--border);
-    display:flex;align-items:center;justify-content:center;color:var(--text-2);z-index:2;
-  }
-  .pbody{padding:12px;display:flex;flex-direction:column;gap:5px;flex:1;}
-  .ptag{font-size:11px;font-weight:500;color:var(--text-3);}
-  .pname{font-size:13px;font-weight:400;color:var(--text-1);margin:0;line-height:1.35;}
-  .pbrand{font-size:11px;color:var(--text-3);}
-  .price-row{display:flex;align-items:baseline;gap:6px;margin-top:2px;}
-  .discount{font-size:13px;font-weight:600;color:#D63A2E;}
-  .price{font-size:13px;font-weight:600;color:var(--text-1);}
-  .pcart{
-    margin-top:6px;width:100%;font-size:13px;font-weight:700;
-    background:var(--cta);color:#fff;border:none;border-radius:var(--pill);padding:10px 0;
-  }
-
-  /* =================================================================
-     HIGHLIGHT 02 — category cards
-  ================================================================= */
-  .cat-card .ph{height:170px;margin-bottom:16px;}
-
-  /* =================================================================
-     HIGHLIGHT 03 — compact cards
-  ================================================================= */
-  .compact .ph{height:120px;margin-bottom:14px;}
-  .compact .count{font-size:12px;color:var(--text-3);margin-top:6px;}
-
-  /* =================================================================
-     HIGHLIGHT 04 — horizontal cards
-  ================================================================= */
-  .hcard{display:flex;gap:16px;align-items:center;}
-  .hcard .ph{width:96px;height:96px;flex:none;border-radius:10px;font-size:11px;}
-  .hcard .items{font-size:12px;color:var(--text-3);margin-top:6px;}
-
-  /* =================================================================
-     RECOMMENDED SET
-  ================================================================= */
-  .set-card{display:flex;flex-direction:column;padding:0;overflow:hidden;}
-  .set-card .ph{height:160px;border:none;border-radius:0;border-bottom:1px solid var(--card-border);}
-  .set-body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1;}
-  .set-incl{font-size:12px;color:var(--text-2);background:var(--section-bg);border-radius:8px;padding:10px 12px;}
-  .set-benefit{font-size:12px;font-weight:700;color:var(--accent);}
-
   /* =================================================================
      NEXT CHALLENGE
   ================================================================= */
   .ch-card{padding:0;overflow:hidden;display:flex;flex-direction:column;}
-  .ch-card .ph{height:200px;border:none;border-radius:0;border-bottom:1px solid var(--card-border);}
+  .kit-visual{
+    position:relative;height:220px;background:#F6F6F6;border-bottom:1px solid var(--card-border);
+    overflow:hidden;
+  }
+  .kit-visual::after{
+    content:"";position:absolute;inset:16px;border:1px dashed #CFCFCF;border-radius:14px;pointer-events:none;
+  }
+  .kit-item{
+    position:absolute;background:#fff;border:1px solid #D7D7D7;border-radius:12px;
+    box-shadow:0 10px 24px rgba(0,0,0,.06);display:flex;align-items:center;justify-content:center;
+    color:var(--text-3);font-size:11px;font-weight:800;letter-spacing:.03em;text-align:center;z-index:2;
+  }
+  .kit-item::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(135deg,transparent calc(50% - .5px),rgba(0,0,0,.05) 50%,transparent calc(50% + .5px));
+  }
+  .kit-item span{position:relative;z-index:1;padding:0 8px;line-height:1.35;}
+  .kit-item.main{width:116px;height:124px;left:24px;top:26px;}
+  .kit-item.sub{width:86px;height:86px;right:36px;top:34px;border-radius:50%;}
+  .kit-item.shoe{width:148px;height:78px;right:24px;bottom:28px;border-radius:999px;}
+  .kit-plus{
+    position:absolute;width:24px;height:24px;border-radius:50%;background:#111;color:#fff;z-index:3;
+    display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;line-height:1;
+  }
+  .kit-plus.p1{left:142px;top:112px;}
+  .kit-plus.p2{right:142px;top:128px;}
+  .kit-item:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(0,0,0,.1);border-color:#111;}
+  .kit-item:focus-visible{outline:3px solid var(--accent-soft);outline-offset:3px;border-color:var(--accent);}
   .ch-body{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1;}
-  .ch-gear{font-size:12px;color:var(--text-3);}
 
   /* =================================================================
-     FILTER BAR
+     FINAL REFINEMENTS — single hero visual + streamlined highlight selector
   ================================================================= */
-  .filterbar{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 28px;}
+  .hero-key-visual{
+    max-width:var(--maxw);
+    width:100%;
+    margin:0 auto;
+    padding:0 40px;
+  }
+  .hero-key-card{
+    height:560px;
+    border-radius:16px;
+    font-size:13px;
+  }
+  .hero-key-card span{
+    font-size:13px;
+    font-weight:800;
+    line-height:1.6;
+  }
+
+  .highlight-head{
+    max-width:760px;
+    margin-bottom:28px;
+  }
+  .highlight-head .category-tabs{
+    margin-top:22px;
+  }
+
+  .stage-product-panel{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .ep-feature{
+    display:grid;
+    grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+    background:#fff;
+    border:1px solid var(--card-border);
+    border-radius:var(--radius);
+    overflow:hidden;
+    min-height:340px;
+  }
+
+  .ep-feature{
+    color:inherit;
+    text-decoration:none;
+    cursor:pointer;
+  }
+  .ep-feature:hover{
+    border-color:#111;
+  }
+  .ep-feature:focus-visible{
+    outline:3px solid var(--accent-soft);
+    outline-offset:4px;
+    border-color:var(--accent);
+  }
+
+  .ep-feature-img{
+    min-height:340px;
+    aspect-ratio:1 / 1;
+    border:none;
+    border-radius:0;
+    border-right:1px solid var(--card-border);
+  }
+  .ep-feature-img span{
+    font-weight:800;
+  }
+  .ep-feature-copy{
+    padding:34px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+  }
+  .ep-meta{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-bottom:18px;
+    color:var(--text-1);
+  }
+  .ep-brand{
+    font-size:13px;
+    font-weight:900;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--text-1);
+  }
+  .ep-dot{
+    color:var(--text-3);
+    font-weight:800;
+  }
+  .ep-role{
+    font-size:13px;
+    font-weight:800;
+    color:var(--text-1);
+  }
+  .ep-title{
+    font-size:28px;
+    font-weight:900;
+    letter-spacing:-.02em;
+    line-height:1.25;
+    margin:0 0 18px;
+    max-width:440px;
+  }
+  .ep-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0;
+    font-size:13px;
+    font-weight:700;
+    color:var(--text-2);
+  }
+  .ep-tags::before{
+    content:"추천: ";
+    color:var(--text-3);
+    font-weight:800;
+    margin-right:4px;
+  }
+  .ep-tags span{
+    display:inline-flex;
+    align-items:center;
+    color:var(--text-2);
+  }
+  .ep-tags span + span::before{
+    content:"·";
+    color:var(--text-3);
+    margin:0 7px;
+    font-weight:700;
+  }
+
+  .ep-selector-row{
+    display:flex;
+    gap:14px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding:2px 2px 16px;
+    margin:0 -2px;
+  }
+  .ep-selector-row::-webkit-scrollbar{height:6px;}
+  .ep-selector-row::-webkit-scrollbar-track{background:#EFEFEF;border-radius:var(--pill);}
+  .ep-selector-row::-webkit-scrollbar-thumb{background:#C7C7C7;border-radius:var(--pill);}
+  .ep-selector-card{
+    flex:0 0 188px;
+    min-width:188px;
+    scroll-snap-align:start;
+    display:flex;
+    flex-direction:column;
+    text-align:left;
+    padding:0;
+    background:#fff;
+    border:1px solid var(--card-border);
+    border-radius:var(--radius);
+    overflow:hidden;
+    color:var(--text-1);
+    transition:border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+  }
+  .ep-selector-card:hover{
+    border-color:#111;
+    transform:translateY(-2px);
+  }
+  .ep-selector-card.active{
+    border-color:#111;
+    box-shadow:0 0 0 1px #111 inset;
+  }
+  .ep-selector-img{
+    width:100%;
+    aspect-ratio:1 / 1;
+    min-height:auto;
+    border:none;
+    border-radius:0;
+    border-bottom:1px solid var(--card-border);
+  }
+  .ep-selector-copy{
+    padding:13px;
+    min-height:78px;
+  }
+  .ep-selector-brand{
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--text-1);
+    margin-bottom:7px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .ep-selector-role{
+    display:block;
+    font-size:12px;
+    line-height:1.35;
+    font-weight:800;
+    color:var(--text-1);
+  }
+
+  @media (max-width:980px){
+    .ep-feature{
+      grid-template-columns:1fr;
+    }
+    .ep-feature-img{
+      min-height:auto;
+      border-right:none;
+      border-bottom:1px solid var(--card-border);
+    }
+    .ep-selector-card{
+      flex-basis:176px;
+      min-width:176px;
+    }
+  }
+
+  @media (max-width:640px){
+    .hero-key-visual{
+      padding:0 16px;
+    }
+    .hero-key-card{
+      height:auto;
+      aspect-ratio:4 / 5;
+      border-radius:14px;
+    }
+    .highlight-head{
+      margin-bottom:22px;
+    }
+    .ep-feature-copy{
+      padding:24px;
+    }
+    .ep-title{
+      font-size:22px;
+      max-width:none;
+      margin-bottom:14px;
+    }
+    .ep-meta{
+      margin-bottom:14px;
+    }
+    .ep-selector-row{
+      gap:12px;
+      padding-bottom:14px;
+    }
+    .ep-selector-row::-webkit-scrollbar{
+      display:none;
+    }
+    .ep-selector-card{
+      flex:0 0 42%;
+      min-width:42%;
+    }
+    .ep-selector-copy{
+      padding:12px;
+      min-height:72px;
+    }
+    .ep-selector-role{
+      font-size:11px;
+    }
+    #guide .guide-grid{
+      display:flex;
+      overflow-x:auto;
+      overflow-y:hidden;
+      gap:14px;
+      padding:2px 24px 18px;
+      margin:0 -24px;
+      scroll-snap-type:x mandatory;
+      -webkit-overflow-scrolling:touch;
+    }
+    #guide .guide-grid::-webkit-scrollbar{
+      display:none;
+    }
+    #guide .guide-card{
+      flex:0 0 82%;
+      min-width:82%;
+      scroll-snap-align:start;
+      min-height:auto;
+    }
+    #guide .guide-card .ph{
+      height:190px;
+    }
+  }
+
 
   /* =================================================================
-     NOTICE
+     CTA BAND — replacing full product list for assignment version
   ================================================================= */
-  .notice{font-size:13px;color:var(--text-2);}
-  .notice h4{font-size:14px;font-weight:700;color:var(--text-1);margin:0 0 10px;}
-  .notice ul{margin:0;padding-left:18px;}
-  .notice li{margin-bottom:6px;}
+  .cta-band{
+    background:#fff;
+    border:1px solid var(--card-border);
+    border-radius:var(--radius);
+    padding:40px;
+  }
+  .cta-band .sec-title{
+    margin-bottom:14px;
+  }
+  .cta-band .sec-desc{
+    max-width:680px;
+  }
+  .cta-band-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:24px;
+  }
+  @media (max-width:640px){
+    .cta-band{
+      padding:28px 22px;
+    }
+    .cta-band-actions .btn{
+      width:100%;
+    }
+  }
+
 
   /* =================================================================
-     FOOTER
+     NEXT CHALLENGE — attached plus markers
   ================================================================= */
-  footer.site{background:#fff;border-top:1px solid var(--border);padding:56px 0 40px;}
-  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;}
-  .foot-col h5{font-size:13px;font-weight:700;margin:0 0 14px;letter-spacing:.02em;}
-  .foot-col a{display:block;font-size:13px;color:var(--text-2);margin-bottom:10px;}
-  .foot-logo{font-size:18px;font-weight:800;letter-spacing:.04em;margin-bottom:14px;}
-  .foot-desc{font-size:13px;color:var(--text-3);max-width:280px;margin:0;}
-  .foot-bottom{border-top:1px solid var(--border);margin-top:40px;padding-top:24px;font-size:12px;color:var(--text-3);}
+  #challenge .kit-item.main::after,
+  #challenge .kit-item.sub::after{
+    content:"+";
+    position:absolute;
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    background:#111;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:15px;
+    font-weight:800;
+    line-height:1;
+    z-index:4;
+    box-shadow:0 8px 18px rgba(0,0,0,.12);
+  }
+  #challenge .kit-item.main::after{
+    right:-12px;
+    top:50%;
+    transform:translateY(-50%);
+  }
+  #challenge .kit-item.sub::after{
+    left:50%;
+    bottom:-12px;
+    transform:translateX(-50%);
+  }
+  @media (max-width:640px){
+    #challenge .kit-item.main::after,
+    #challenge .kit-item.sub::after{
+      width:22px;
+      height:22px;
+      font-size:14px;
+    }
+    #challenge .kit-item.main::after{
+      right:-11px;
+    }
+    #challenge .kit-item.sub::after{
+      bottom:-11px;
+    }
+  }
 
   /* ---------- Responsive ---------- */
-  @media (max-width:1240px){ .wrap{padding:0 40px;} }
+  @media (max-width:1240px){ .wrap{padding:0 40px;} .hero-mood-grid{padding:0 40px;} }
   @media (max-width:980px){
     .hero-grid{grid-template-columns:1fr;}
     .hl-split{grid-template-columns:1fr;}
     .g4{grid-template-columns:repeat(2,1fr);}
-    .nav-menu{display:none;}
-    .foot-grid{grid-template-columns:1fr 1fr;}
   }
   @media (max-width:640px){
     .g2,.g3,.g4{grid-template-columns:1fr;}
+    .all-head{align-items:flex-start;flex-direction:column;gap:14px;}
+    .sort-control{width:100%;justify-content:space-between;}
+    .sort-control select{min-width:180px;}
     .hero h1{font-size:36px;}
     .hero-message{font-size:20px;line-height:1.4;}
     .sec-title{font-size:26px;}
-    .search{display:none;}
-    .foot-grid{grid-template-columns:1fr;}
-    .product-scroll > .pcard{flex-basis:240px;min-width:240px;}
     .sticky-stage-nav{top:0;}
-    .sticky-stage-nav .stage-inner{align-items:flex-start;flex-direction:column;gap:2px;padding:10px 0;}
+    .sticky-stage-nav .stage-inner{align-items:flex-start;flex-direction:column;gap:2px;padding:10px 24px;}
     .stage-label{font-size:11px;}
     .stage-tabs{width:100%;padding:4px 0 0;}
-    .hero{padding:56px 0 0;}
+    .hero{padding:56px 0 64px;}
     .hero-grid{gap:28px;}
     .hero-copy{padding:0 24px;}
     .hero-mood-grid{grid-template-columns:1fr;gap:12px;padding:0 16px;}
@@ -368,13 +620,21 @@
     .hero-mood-card:nth-child(2),
     .hero-mood-card:nth-child(3){height:360px;}
     .hero-cta{display:grid;grid-template-columns:1fr;gap:10px;padding:0 24px;}
-    .hero-img{height:560px;}
     .guide-card{min-height:520px;}
     .guide-card .ph{height:280px;}
-    #allProducts.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
-    #allProducts .pcard .pimg{height:150px;}
-    #allProducts .pbody{padding:12px;}
-    #allProducts .pcart{font-size:12px;padding:9px 0;}
+    .kit-visual{height:auto;aspect-ratio:1 / 1;}
+    .kit-visual::after{inset:20px;}
+    .kit-item.main{width:32%;height:34%;left:8%;top:12%;}
+    .kit-item.sub{width:25%;height:25%;right:10%;top:13%;}
+    .kit-item.shoe{width:42%;height:22%;right:8%;bottom:10%;}
+    .kit-plus.p1{left:38%;top:42%;}
+    .kit-plus.p2{right:39%;top:48%;}
+  }
+
+  /* Hero CTA lifted above mood images */
+  .hero-copy .hero-cta{max-width:none;margin:28px 0 0;padding:0;}
+  @media (max-width:640px){
+    .hero-copy .hero-cta{padding:0;margin-top:24px;}
   }
 </style>
 </head>
@@ -385,44 +645,21 @@
 <div class="hero-grid">
 <div class="hero-copy">
 <div class="hero-eyebrow">Running Gear Guide</div>
-<h1>READY TO RUN</h1>
-<p class="hero-message">처음의 한 걸음부터 더 빠른 페이스까지,<br/>내 러닝에 맞춘 기어 셋업</p>
-<p class="sub">러닝화, 웨어, 액세서리를 어떻게 골라야 할지 모르겠다면 지금 내 러닝 단계에 맞는 기어부터 확인해보세요.</p>
-</div>
-<div class="hero-mood-grid" aria-label="러닝 무드 이미지">
-<div class="ph hero-mood-card"><span>MOOD IMAGE 01<br/>시티 러닝</span></div>
-<div class="ph hero-mood-card"><span>MOOD IMAGE 02<br/>트랙 러닝</span></div>
-<div class="ph hero-mood-card"><span>MOOD IMAGE 03<br/>자연 속 러닝</span></div>
-</div>
+<h1>FIND YOUR RUN</h1>
+<p class="hero-message">첫 5K부터 레이스 데이까지,<br/>내 러닝 단계에 맞춘 기어 셀렉션</p>
+<p class="sub">러닝화 하나로 시작해도 좋지만, 오래 달리려면 필요한 장비는 달라집니다. 지금 내 러닝 단계에 맞는 기어를 확인하세요.</p>
 <div class="hero-cta">
-<a class="btn btn-primary" href="#guide">나에게 맞는 기어 찾기</a>
-<a class="btn btn-secondary" href="#all">전체 상품 보기</a>
+<a class="btn btn-primary" href="#guide">내 러닝 단계 찾기</a>
+<a class="btn btn-secondary" href="#hl01">단계별 추천 기어 보기</a>
+</div>
+</div>
+<div aria-label="러닝 기어 셋업 키비주얼" class="hero-key-visual">
+<div class="ph hero-key-card"><span>KEY VISUAL<br/>러닝 기어 셋업</span></div>
 </div>
 </div>
 </div>
 </section>
 <!-- ============================= BENEFIT ============================= -->
-<section class="alt" id="benefit">
-<div class="wrap">
-<div class="sec-head">
-<div class="sec-eyebrow">Benefit</div>
-<h2 class="sec-title">지금 시작하면 더 좋은 혜택</h2>
-<p class="sec-desc">러닝 입문자를 위한 쿠폰과 동시 구매 혜택을 한 번에 확인하세요.</p>
-</div>
-<div class="grid g2">
-<div class="card">
-<div class="ph" style="width:44px;height:44px;border-radius:10px;margin-bottom:16px;font-size:0;"><span></span></div>
-<h3 class="card-title">첫 구매 쿠폰</h3>
-<p class="card-body">러닝 카테고리를 처음 구매하는 회원에게 즉시 사용 가능한 할인 쿠폰을 드립니다.</p>
-</div>
-<div class="card">
-<div class="ph" style="width:44px;height:44px;border-radius:10px;margin-bottom:16px;font-size:0;"><span></span></div>
-<h3 class="card-title">동시 구매 혜택</h3>
-<p class="card-body">두 가지 이상 카테고리를 구매하면 5% 추가 할인됩니다.</p>
-</div>
-</div>
-</div>
-</section>
 <!-- ============================= QUICK GUIDE ============================= -->
 <section id="guide">
 <div class="wrap">
@@ -431,23 +668,19 @@
 <h2 class="sec-title">내 러닝 목적에 맞는 기어 찾기</h2>
 <p class="sec-desc">러닝을 막 시작하는 단계인지, 루틴을 이어가는 단계인지, 더 빠른 페이스를 준비하는 단계인지에 따라 필요한 기어가 달라집니다. 지금 내 러닝 상태를 선택하면 필요한 카테고리와 추천 기어를 바로 확인할 수 있습니다.</p>
 </div>
-<div class="grid g3">
+<div class="grid g4 guide-grid">
 <div class="card guide-card">
 <div class="ph"><span>가이드 이미지</span></div>
 <h3 class="card-title">이제 막 시작한다면</h3>
-<p class="card-body">처음부터 많이 갖출 필요는 없습니다. 편하게 달릴 수 있는 러닝화, 웨어, 양말부터 시작하세요.</p>
-<div class="guide-cat">
-<span class="chip">러닝화</span><span class="chip">러닝웨어</span><span class="chip">러닝 양말</span>
-</div>
+<p class="card-body">처음부터 많이 갖출 필요는 없습니다. 발에 부담을 줄이는 러닝화와 움직임을 방해하지 않는 웨어부터 시작하세요.</p>
+<div class="guide-cat"><span>#러닝화</span><span>#러닝웨어</span></div>
 <a aria-label="첫 러닝 기본템 하이라이트로 이동" class="btn-small btn-block" href="#hl01">첫 러닝 기본템 보기</a>
 </div>
 <div class="card guide-card">
 <div class="ph"><span>가이드 이미지</span></div>
 <h3 class="card-title">꾸준히 달리고 싶다면</h3>
-<p class="card-body">러닝을 계속하다 보면 작은 불편함이 루틴을 방해합니다. 수납, 수분 보급, 햇빛 차단, 발 피로를 줄여주는 아이템을 확인하세요.</p>
-<div class="guide-cat">
-<span class="chip">러닝캡</span><span class="chip">선글라스</span><span class="chip">러닝베스트</span><span class="chip">기능성 양말</span>
-</div>
+<p class="card-body">러닝을 계속하다 보면 작은 불편함이 루틴을 방해합니다. 캡, 기능성 양말, 베스트, 선글라스로 반복되는 러닝의 불편함을 줄여보세요.</p>
+<div class="guide-cat"><span>#러닝캡</span><span>#기능성 양말</span><span>#러닝베스트</span><span>#선글라스</span></div>
 <a aria-label="루틴 유지템 하이라이트로 이동" class="btn-small btn-block" href="#hl02">루틴 유지템 보기</a>
 </div>
 <div class="card guide-card">
@@ -455,11 +688,19 @@
 <h3 class="card-title">더 빠르게 달리고 싶다면</h3>
 <p class="card-body">속도를 높이고 싶다면 반발력, 경량성, 추진력이 중요합니다. 카본화와 레이싱 기어로 다음 페이스를 준비하세요.</p>
 <div class="guide-cat">
-<span class="chip">카본화</span><span class="chip">레이싱화</span><span class="chip">경량 웨어</span><span class="chip">레이싱 양말</span>
+<span>#카본화</span><span>#레이싱화</span><span>#경량 웨어</span><span>#레이싱 양말</span>
 </div>
 <a aria-label="스피드업 기어 하이라이트로 이동" class="btn-small btn-block" href="#hl03">스피드업 기어 보기</a>
 </div>
+<div class="card guide-card">
+<div class="ph"><span>가이드 이미지</span></div>
+<h3 class="card-title">더 멀리, 다른 코스로 달리고 싶다면</h3>
+<p class="card-body">러닝이 익숙해졌다면 더 긴 거리, 새로운 코스, 달라진 날씨에 맞춰 장비도 달라져야 합니다. 다음 목표에 맞는 기어를 확인하세요.</p>
+<div class="guide-cat">
+<span>#장거리 러닝</span><span>#트레일</span><span>#우중 러닝</span>
 </div>
+<a aria-label="레벨 업 기어 하이라이트로 이동" class="btn-small btn-block" href="#challenge">레벨 업 기어 보기</a>
+</div></div>
 </div>
 </section>
 <!-- ============================= STICKY STAGE NAV ============================= -->
@@ -470,154 +711,37 @@
 <a class="stage-link active" data-stage-tab="hl01" href="#hl01">첫 러닝 기본템</a>
 <a class="stage-link" data-stage-tab="hl02" href="#hl02">루틴 유지템</a>
 <a class="stage-link" data-stage-tab="hl03" href="#hl03">스피드업 기어</a>
+<a class="stage-link" data-stage-tab="challenge" href="#challenge">레벨 업 기어</a>
 </div>
 </div>
 </nav>
 <!-- ============================= HIGHLIGHT 01 ============================= -->
 <section class="alt" id="hl01">
 <div class="wrap">
-<div class="hl-split">
-<div class="ph hl-img"><span>첫 러닝 기본템 대표 이미지</span></div>
-<div>
+<div class="highlight-head">
 <div class="sec-eyebrow">01</div>
 <h2 class="hl-title">첫 러닝 기본템</h2>
-<p class="hl-copy">처음이라면 기록보다 편안함이 먼저입니다. 발에 부담을 줄이는 러닝화, 땀을 빠르게 덜어주는 웨어, 물집을 줄이는 양말처럼 첫 러닝의 불편함을 줄이는 기본템부터 고르세요.</p>
+<p class="hl-copy">처음이라면 기록보다 편안함이 먼저입니다. 발에 부담을 줄이는 러닝화와 땀을 빠르게 배출하는 웨어처럼 첫 러닝의 불편함을 줄이는 기본템부터 고르세요.</p>
 <div aria-label="첫 러닝 기본템 카테고리 탭" class="category-tabs" role="tablist">
 <button aria-controls="starter-shoes" class="category-tab active" data-panel-group="starter" data-panel-target="starter-shoes">러닝화</button>
 <button aria-controls="starter-wear" class="category-tab" data-panel-group="starter" data-panel-target="starter-wear">러닝웨어</button>
-<button aria-controls="starter-socks" class="category-tab" data-panel-group="starter" data-panel-target="starter-socks">러닝 양말</button>
-</div>
 </div>
 </div>
 <div class="carousel">
 <div class="carousel-head">
-<span aria-hidden="true" class="lbl"></span>
-<div class="car-nav">
-<button aria-label="이전" class="car-arrow" data-dir="prev" data-scroll-scope="starter">‹</button>
-<button aria-label="다음" class="car-arrow" data-dir="next" data-scroll-scope="starter">›</button>
-</div>
+<span aria-hidden="true" class="lbl">추천 기어 선택</span>
 </div>
 <div class="product-panels" data-product-scope="starter">
-<div aria-label="첫 러닝 기본템 러닝화" class="product-panel active" id="starter-shoes" role="tabpanel">
-<div aria-label="첫 러닝 기본템 러닝화 상품 목록" class="product-scroll" tabindex="0">
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">러닝화</span>
-<span class="pbrand">HOKA</span>
-<p class="pname">입문용 쿠션 러닝화 01</p>
-<div class="price-row"><span class="discount">30%</span><span class="price">89,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">러닝화</span>
-<span class="pbrand">ASICS</span>
-<p class="pname">안정형 데일리 러닝화 02</p>
-<div class="price-row"><span class="discount">25%</span><span class="price">102,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">러닝화</span>
-<span class="pbrand">On</span>
-<p class="pname">경량 데일리 러닝화 03</p>
-<div class="price-row"><span class="discount">20%</span><span class="price">95,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">러닝화</span>
-<span class="pbrand">Saucony</span>
-<p class="pname">올라운드 러닝화 04</p>
-<div class="price-row"><span class="discount">15%</span><span class="price">119,000원</span></div>
-</div>
-</div>
-</div>
-</div>
-<div aria-label="첫 러닝 기본템 러닝웨어" class="product-panel" id="starter-wear" role="tabpanel">
-<div aria-label="첫 러닝 기본템 러닝웨어 상품 목록" class="product-scroll" tabindex="0">
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">러닝웨어</span>
-<span class="pbrand">UVU</span>
-<p class="pname">흡습속건 러닝 티셔츠 01</p>
-<div class="price-row"><span class="discount">15%</span><span class="price">34,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">러닝웨어</span>
-<span class="pbrand">Satisfy</span>
-<p class="pname">경량 러닝 쇼츠 02</p>
-<div class="price-row"><span class="discount">22%</span><span class="price">29,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">러닝웨어</span>
-<span class="pbrand">Bandit Running</span>
-<p class="pname">데일리 러닝 레깅스 03</p>
-<div class="price-row"><span class="discount">18%</span><span class="price">45,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">러닝웨어</span>
-<span class="pbrand">Tracksmith</span>
-<p class="pname">라이트 윈드브레이커 04</p>
-<div class="price-row"><span class="discount">20%</span><span class="price">79,000원</span></div>
-</div>
-</div>
-</div>
-</div>
-<div aria-label="첫 러닝 기본템 러닝 양말" class="product-panel" id="starter-socks" role="tabpanel">
-<div aria-label="첫 러닝 기본템 러닝 양말 상품 목록" class="product-scroll" tabindex="0">
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">러닝 양말</span>
-<span class="pbrand">CEP</span>
-<p class="pname">물집 방지 러닝 양말 01</p>
-<div class="price-row"><span class="discount">10%</span><span class="price">18,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">러닝 양말</span>
-<span class="pbrand">Feetures</span>
-<p class="pname">쿠션 러닝 양말 02</p>
-<div class="price-row"><span class="discount">8%</span><span class="price">16,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">러닝 양말</span>
-<span class="pbrand">Injinji</span>
-<p class="pname">흡습속건 러닝 양말 03</p>
-<div class="price-row"><span class="discount">12%</span><span class="price">19,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">러닝 양말</span>
-<span class="pbrand">Stance</span>
-<p class="pname">논슬립 러닝 양말 04</p>
-<div class="price-row"><span class="discount">10%</span><span class="price">21,000원</span></div>
-</div>
-</div>
-</div>
-</div>
+<div aria-label="첫 러닝 기본템 러닝화" class="product-panel active" id="starter-shoes" role="tabpanel"><div class="stage-product-panel"><a aria-label="HOKA 쿠션 러닝화 셀렉션 상품 페이지로 이동" class="ep-feature" data-feature-card="true" href="/products/starter-shoes-01"><div class="ph ep-feature-img"><span>대표 제품 이미지</span></div><div class="ep-feature-copy"><div class="ep-meta"><span class="ep-brand">HOKA</span><span class="ep-dot">·</span><span class="ep-role">쿠션 러닝화 셀렉션</span></div><h3 class="ep-title">첫 5K, 발의 부담을 덜고 편하게 시작하고 싶다면</h3><div class="ep-tags"><span>첫5K</span><span>쿠션감</span><span>데일리런</span></div></div></a><div aria-label="추천 상품 선택" class="ep-selector-row">
+<button aria-pressed="true" class="ep-selector-card active" data-brand="HOKA" data-img="대표 제품 이미지" data-role="쿠션 러닝화 셀렉션" data-tags="#첫5K|#쿠션감|#데일리런" data-title="첫 5K, 발의 부담을 덜고 편하게 시작하고 싶다면" data-url="/products/starter-shoes-01" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">HOKA</div><div class="ep-selector-role">쿠션 러닝화 셀렉션</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="ASICS" data-img="제품 이미지" data-role="안정감 데일리화 셀렉션" data-tags="#데일리런|#안정감|#꾸준함" data-title="흔들림 없이 꾸준한 루틴을 만들고 싶은 첫 러너에게" data-url="/products/starter-shoes-02" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">ASICS</div><div class="ep-selector-role">안정감 데일리화 셀렉션</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="On" data-img="제품 이미지" data-role="시티 러닝화 셀렉션" data-tags="#시티러닝|#가벼운착화감|#데일리" data-title="일상 속 러닝까지 가볍게 이어가는 선택" data-url="/products/starter-shoes-03" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">On</div><div class="ep-selector-role">시티 러닝화 셀렉션</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="Saucony" data-img="제품 이미지" data-role="올라운드 러닝화 셀렉션" data-tags="#조깅|#올라운드|#입문러닝" data-title="걷기와 조깅 사이, 부담 없이 시작하는 첫 러닝화" data-url="/products/starter-shoes-04" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">Saucony</div><div class="ep-selector-role">올라운드 러닝화 셀렉션</div></div></button></div></div></div>
+<div aria-label="첫 러닝 기본템 러닝웨어" class="product-panel" id="starter-wear" role="tabpanel"><div class="stage-product-panel"><a aria-label="UVU 트레이닝 러닝 탑 상품 페이지로 이동" class="ep-feature" data-feature-card="true" href="/products/starter-wear-01"><div class="ph ep-feature-img"><span>대표 제품 이미지</span></div><div class="ep-feature-copy"><div class="ep-meta"><span class="ep-brand">UVU</span><span class="ep-dot">·</span><span class="ep-role">트레이닝 러닝 탑</span></div><h3 class="ep-title">러닝과 트레이닝을 함께 가져가는 기본 레이어</h3><div class="ep-tags"><span>트레이닝</span><span>러닝탑</span><span>베이스</span></div></div></a><div aria-label="추천 상품 선택" class="ep-selector-row">
+<button aria-pressed="true" class="ep-selector-card active" data-brand="UVU" data-img="대표 제품 이미지" data-role="트레이닝 러닝 탑" data-tags="#트레이닝|#러닝탑|#베이스" data-title="러닝과 트레이닝을 함께 가져가는 기본 레이어" data-url="/products/starter-wear-01" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">UVU</div><div class="ep-selector-role">트레이닝 러닝 탑</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="Satisfy" data-img="제품 이미지" data-role="경량 러닝 쇼츠" data-tags="#미니멀|#경량|#러너스하이" data-title="불필요한 요소를 덜어내고 움직임에 집중하는 쇼츠" data-url="/products/starter-wear-02" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">Satisfy</div><div class="ep-selector-role">경량 러닝 쇼츠</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="Bandit Running" data-img="제품 이미지" data-role="커뮤니티 러닝 타이츠" data-tags="#러닝클럽|#NYC무드|#루틴" data-title="러닝 클럽 무드로 일상과 훈련을 잇는 베이스" data-url="/products/starter-wear-03" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">Bandit Running</div><div class="ep-selector-role">커뮤니티 러닝 타이츠</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="Tracksmith" data-img="제품 이미지" data-role="클래식 러닝 재킷" data-tags="#클래식러닝|#아침러닝|#레이어링" data-title="아침 러닝에 클래식한 러닝 무드를 더하는 한 겹" data-url="/products/starter-wear-04" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">Tracksmith</div><div class="ep-selector-role">클래식 러닝 재킷</div></div></button></div></div></div>
 </div>
 </div>
 </div>
@@ -625,163 +749,36 @@
 <!-- ============================= HIGHLIGHT 02 ============================= -->
 <section id="hl02">
 <div class="wrap">
-<div class="hl-split">
-<div class="ph hl-img"><span>루틴 유지템 대표 이미지</span></div>
-<div>
+<div class="highlight-head">
 <div class="sec-eyebrow">02</div>
 <h2 class="hl-title">루틴 유지템</h2>
-<p class="hl-copy">러닝이 일상이 되면 장비의 기준도 달라집니다. 러닝베스트는 수납과 수분 보급을, 선글라스와 캡은 햇빛과 눈부심을, 기능성 양말은 발 피로와 마찰을 줄여 루틴을 더 오래 이어가게 해줍니다.</p>
-<div aria-label="루틴 유지템 카테고리 탭" class="category-tabs" role="tablist">
-<button aria-controls="routine-vest" class="category-tab active" data-panel-group="routine" data-panel-target="routine-vest">러닝베스트</button>
-<button aria-controls="routine-sunglasses" class="category-tab" data-panel-group="routine" data-panel-target="routine-sunglasses">선글라스</button>
-<button aria-controls="routine-cap" class="category-tab" data-panel-group="routine" data-panel-target="routine-cap">러닝캡</button>
-<button aria-controls="routine-socks" class="category-tab" data-panel-group="routine" data-panel-target="routine-socks">기능성 양말</button>
-</div>
-</div>
+<p class="hl-copy">러닝이 일상이 되면 장비의 기준도 달라집니다. 캡은 러닝 룩과 햇빛 대응을, 기능성 양말은 발의 마찰과 피로를, 러닝베스트는 수납과 수분 보급을, 선글라스는 눈부심을 줄여 루틴을 더 오래 이어가게 해줍니다.</p>
+<div aria-label="루틴 유지템 카테고리 탭" class="category-tabs" role="tablist"><button aria-controls="routine-cap" class="category-tab active" data-panel-group="routine" data-panel-target="routine-cap">러닝캡</button><button aria-controls="routine-socks" class="category-tab" data-panel-group="routine" data-panel-target="routine-socks">기능성 양말</button><button aria-controls="routine-vest" class="category-tab" data-panel-group="routine" data-panel-target="routine-vest">러닝베스트</button><button aria-controls="routine-sunglasses" class="category-tab" data-panel-group="routine" data-panel-target="routine-sunglasses">선글라스</button></div>
 </div>
 <div class="carousel">
 <div class="carousel-head">
-<span aria-hidden="true" class="lbl"></span>
-<div class="car-nav">
-<button aria-label="이전" class="car-arrow" data-dir="prev" data-scroll-scope="routine">‹</button>
-<button aria-label="다음" class="car-arrow" data-dir="next" data-scroll-scope="routine">›</button>
+<span aria-hidden="true" class="lbl">추천 기어 선택</span>
 </div>
-</div>
-<div class="product-panels" data-product-scope="routine">
-<div aria-label="루틴 유지템 러닝베스트" class="product-panel active" id="routine-vest" role="tabpanel">
-<div aria-label="루틴 유지템 러닝베스트 상품 목록" class="product-scroll" tabindex="0">
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">러닝베스트</span>
-<span class="pbrand">Salomon</span>
-<p class="pname">급수배낭 러닝베스트 01</p>
-<div class="price-row"><span class="discount">15%</span><span class="price">72,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">러닝베스트</span>
-<span class="pbrand">Ultimate Direction</span>
-<p class="pname">하이드레이션 베스트 02</p>
-<div class="price-row"><span class="discount">18%</span><span class="price">89,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">러닝베스트</span>
-<span class="pbrand">Nathan</span>
-<p class="pname">경량 수납 러닝베스트 03</p>
-<div class="price-row"><span class="discount">12%</span><span class="price">68,000원</span></div>
-</div>
-</div>
-</div>
-</div>
-<div aria-label="루틴 유지템 선글라스" class="product-panel" id="routine-sunglasses" role="tabpanel">
-<div aria-label="루틴 유지템 선글라스 상품 목록" class="product-scroll" tabindex="0">
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">선글라스</span>
-<span class="pbrand">Oakley</span>
-<p class="pname">경량 러닝 선글라스 01</p>
-<div class="price-row"><span class="discount">18%</span><span class="price">49,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">선글라스</span>
-<span class="pbrand">District Vision</span>
-<p class="pname">미러 렌즈 스포츠 선글라스 02</p>
-<div class="price-row"><span class="discount">15%</span><span class="price">59,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">선글라스</span>
-<span class="pbrand">goodr</span>
-<p class="pname">논슬립 러닝 선글라스 03</p>
-<div class="price-row"><span class="discount">12%</span><span class="price">42,000원</span></div>
-</div>
-</div>
-</div>
-</div>
-<div aria-label="루틴 유지템 러닝캡" class="product-panel" id="routine-cap" role="tabpanel">
-<div aria-label="루틴 유지템 러닝캡 상품 목록" class="product-scroll" tabindex="0">
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">러닝캡</span>
-<span class="pbrand">Alex Zono</span>
-<p class="pname">통기성 러닝 캡 01</p>
-<div class="price-row"><span class="discount">12%</span><span class="price">24,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">러닝캡</span>
-<span class="pbrand">Ciele Athletics</span>
-<p class="pname">라이트 러닝 바이저 02</p>
-<div class="price-row"><span class="discount">10%</span><span class="price">22,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">러닝캡</span>
-<span class="pbrand">Bandit Running</span>
-<p class="pname">방수 러닝 캡 03</p>
-<div class="price-row"><span class="discount">15%</span><span class="price">28,000원</span></div>
-</div>
-</div>
-</div>
-</div>
-<div aria-label="루틴 유지템 기능성 양말" class="product-panel" id="routine-socks" role="tabpanel">
-<div aria-label="루틴 유지템 기능성 양말 상품 목록" class="product-scroll" tabindex="0">
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">기능성 양말</span>
-<span class="pbrand">CEP</span>
-<p class="pname">압박 러닝 양말 01</p>
-<div class="price-row"><span class="discount">10%</span><span class="price">22,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">기능성 양말</span>
-<span class="pbrand">Compressport</span>
-<p class="pname">장거리 쿠션 양말 02</p>
-<div class="price-row"><span class="discount">12%</span><span class="price">24,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">기능성 양말</span>
-<span class="pbrand">Feetures</span>
-<p class="pname">논슬립 레이싱 양말 03</p>
-<div class="price-row"><span class="discount">8%</span><span class="price">24,000원</span></div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<div class="product-panels" data-product-scope="routine"><div aria-label="루틴 유지템 러닝캡" class="product-panel active" id="routine-cap" role="tabpanel"><div class="stage-product-panel"><a aria-label="Alex Zono 포인트 러닝캡 상품 페이지로 이동" class="ep-feature" data-feature-card="true" href="/products/routine-cap-01"><div class="ph ep-feature-img"><span>대표 제품 이미지</span></div><div class="ep-feature-copy"><div class="ep-meta"><span class="ep-brand">Alex Zono</span><span class="ep-dot">·</span><span class="ep-role">포인트 러닝캡</span></div><h3 class="ep-title">달리는 순간에도 룩의 완성도를 놓치고 싶지 않다면</h3><div class="ep-tags"><span>러닝룩</span><span>포인트캡</span><span>시티러닝</span></div></div></a><div aria-label="추천 상품 선택" class="ep-selector-row">
+<button aria-pressed="true" class="ep-selector-card active" data-brand="Alex Zono" data-img="대표 제품 이미지" data-role="포인트 러닝캡" data-tags="#러닝룩|#포인트캡|#시티러닝" data-title="달리는 순간에도 룩의 완성도를 놓치고 싶지 않다면" data-url="/products/routine-cap-01" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">Alex Zono</div><div class="ep-selector-role">포인트 러닝캡</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="Ciele Athletics" data-img="제품 이미지" data-role="퍼포먼스 러닝캡" data-tags="#러닝캡|#통기성|#데일리런" data-title="가볍고 통기성 좋은 캡이 필요한 데일리 러너에게" data-url="/products/routine-cap-02" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">Ciele Athletics</div><div class="ep-selector-role">퍼포먼스 러닝캡</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="Bandit Running" data-img="제품 이미지" data-role="러닝 클럽 캡" data-tags="#러닝클럽|#데일리캡|#NYC무드" data-title="훈련과 일상 사이, 러닝 클럽 무드를 더하는 캡" data-url="/products/routine-cap-03" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">Bandit Running</div><div class="ep-selector-role">러닝 클럽 캡</div></div></button></div></div></div><div aria-label="루틴 유지템 기능성 양말" class="product-panel" id="routine-socks" role="tabpanel"><div class="stage-product-panel"><a aria-label="Feetures 핏 중심 러닝 삭스 상품 페이지로 이동" class="ep-feature" data-feature-card="true" href="/products/routine-socks-01"><div class="ph ep-feature-img"><span>대표 제품 이미지</span></div><div class="ep-feature-copy"><div class="ep-meta"><span class="ep-brand">Feetures</span><span class="ep-dot">·</span><span class="ep-role">핏 중심 러닝 삭스</span></div><h3 class="ep-title">매일 달릴 때 신발 안에서 밀림을 줄여주는 선택</h3><div class="ep-tags"><span>핏감</span><span>데일리런</span><span>마찰관리</span></div></div></a><div aria-label="추천 상품 선택" class="ep-selector-row">
+<button aria-pressed="true" class="ep-selector-card active" data-brand="Feetures" data-img="대표 제품 이미지" data-role="핏 중심 러닝 삭스" data-tags="#핏감|#데일리런|#마찰관리" data-title="매일 달릴 때 신발 안에서 밀림을 줄여주는 선택" data-url="/products/routine-socks-01" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">Feetures</div><div class="ep-selector-role">핏 중심 러닝 삭스</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="Injinji" data-img="제품 이미지" data-role="토삭스 셀렉션" data-tags="#토삭스|#마찰관리|#장거리" data-title="발가락 사이 마찰까지 신경 쓰는 러너에게" data-url="/products/routine-socks-02" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">Injinji</div><div class="ep-selector-role">토삭스 셀렉션</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="Stance" data-img="제품 이미지" data-role="그래픽 퍼포먼스 삭스" data-tags="#러닝룩|#포인트|#데일리런" data-title="기능성에 러닝 룩의 포인트까지 더하고 싶다면" data-url="/products/routine-socks-03" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">Stance</div><div class="ep-selector-role">그래픽 퍼포먼스 삭스</div></div></button></div></div></div><div aria-label="루틴 유지템 러닝베스트" class="product-panel" id="routine-vest" role="tabpanel"><div class="stage-product-panel"><a aria-label="Salomon 트레일·장거리 베스트 상품 페이지로 이동" class="ep-feature" data-feature-card="true" href="/products/routine-vest-01"><div class="ph ep-feature-img"><span>대표 제품 이미지</span></div><div class="ep-feature-copy"><div class="ep-meta"><span class="ep-brand">Salomon</span><span class="ep-dot">·</span><span class="ep-role">트레일·장거리 베스트</span></div><h3 class="ep-title">10K 이후, 보급과 수납까지 챙겨야 할 때</h3><div class="ep-tags"><span>10K이상</span><span>수납</span><span>장거리</span></div></div></a><div aria-label="추천 상품 선택" class="ep-selector-row">
+<button aria-pressed="true" class="ep-selector-card active" data-brand="Salomon" data-img="대표 제품 이미지" data-role="트레일·장거리 베스트" data-tags="#10K이상|#수납|#장거리" data-title="10K 이후, 보급과 수납까지 챙겨야 할 때" data-url="/products/routine-vest-01" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">Salomon</div><div class="ep-selector-role">트레일·장거리 베스트</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="Ultimate Direction" data-img="제품 이미지" data-role="라이트 하이드레이션 베스트" data-tags="#하이드레이션|#트레일|#롱런" data-title="빠르고 가볍게 움직이는 장거리 러너에게" data-url="/products/routine-vest-02" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">Ultimate Direction</div><div class="ep-selector-role">라이트 하이드레이션 베스트</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="Nathan" data-img="제품 이미지" data-role="데일리 수납 베스트" data-tags="#수납|#보급|#데일리런" data-title="필요한 것만 가볍게 담는 실용적인 러닝 파트너" data-url="/products/routine-vest-03" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">Nathan</div><div class="ep-selector-role">데일리 수납 베스트</div></div></button></div></div></div><div aria-label="루틴 유지템 선글라스" class="product-panel" id="routine-sunglasses" role="tabpanel"><div class="stage-product-panel"><a aria-label="Oakley 스포츠 아이웨어 상품 페이지로 이동" class="ep-feature" data-feature-card="true" href="/products/routine-sunglasses-01"><div class="ph ep-feature-img"><span>대표 제품 이미지</span></div><div class="ep-feature-copy"><div class="ep-meta"><span class="ep-brand">Oakley</span><span class="ep-dot">·</span><span class="ep-role">스포츠 아이웨어</span></div><h3 class="ep-title">강한 햇빛 속에서도 시야와 집중을 지키는 선택</h3><div class="ep-tags"><span>스포츠아이웨어</span><span>시야확보</span><span>야외러닝</span></div></div></a><div aria-label="추천 상품 선택" class="ep-selector-row">
+<button aria-pressed="true" class="ep-selector-card active" data-brand="Oakley" data-img="대표 제품 이미지" data-role="스포츠 아이웨어" data-tags="#스포츠아이웨어|#시야확보|#야외러닝" data-title="강한 햇빛 속에서도 시야와 집중을 지키는 선택" data-url="/products/routine-sunglasses-01" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">Oakley</div><div class="ep-selector-role">스포츠 아이웨어</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="District Vision" data-img="제품 이미지" data-role="퍼포먼스 아이웨어" data-tags="#퍼포먼스아이웨어|#러닝룩|#시티러닝" data-title="기능성과 룩의 완성도를 함께 보는 러너에게" data-url="/products/routine-sunglasses-02" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">District Vision</div><div class="ep-selector-role">퍼포먼스 아이웨어</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="goodr" data-img="제품 이미지" data-role="노슬립 러닝 선글라스" data-tags="#노슬립|#노바운스|#데일리러닝" data-title="땀과 움직임에도 가볍게 고정되는 데일리 아이웨어" data-url="/products/routine-sunglasses-03" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">goodr</div><div class="ep-selector-role">노슬립 러닝 선글라스</div></div></button></div></div></div></div>
 </div>
 </div>
 </section>
 <!-- ============================= HIGHLIGHT 03 ============================= -->
 <section class="alt" id="hl03">
 <div class="wrap">
-<div class="hl-split">
-<div class="ph hl-img"><span>스피드업 기어 대표 이미지</span></div>
-<div>
+<div class="highlight-head">
 <div class="sec-eyebrow">03</div>
 <h2 class="hl-title">스피드업 기어</h2>
 <p class="hl-copy">조금 더 빠르게 달리고 싶다면 장비의 무게와 소재를 확인해보세요. 반발력, 경량성, 추진력은 페이스를 끌어올리는 데 도움을 주고, 레이싱 양말과 경량 웨어는 불필요한 무게와 마찰을 줄여줍니다.</p>
@@ -792,149 +789,28 @@
 <button aria-controls="speed-lightwear" class="category-tab" data-panel-group="speed" data-panel-target="speed-lightwear">경량 웨어</button>
 </div>
 </div>
-</div>
 <div class="carousel">
 <div class="carousel-head">
-<span aria-hidden="true" class="lbl"></span>
-<div class="car-nav">
-<button aria-label="이전" class="car-arrow" data-dir="prev" data-scroll-scope="speed">‹</button>
-<button aria-label="다음" class="car-arrow" data-dir="next" data-scroll-scope="speed">›</button>
-</div>
+<span aria-hidden="true" class="lbl">추천 기어 선택</span>
 </div>
 <div class="product-panels" data-product-scope="speed">
-<div aria-label="스피드업 기어 카본화" class="product-panel active" id="speed-carbon" role="tabpanel">
-<div aria-label="스피드업 기어 카본화 상품 목록" class="product-scroll" tabindex="0">
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">카본화</span>
-<span class="pbrand">adidas</span>
-<p class="pname">카본 플레이트 레이싱화 01</p>
-<div class="price-row"><span class="discount">18%</span><span class="price">189,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">카본화</span>
-<span class="pbrand">ASICS</span>
-<p class="pname">레이스 데이 카본화 02</p>
-<div class="price-row"><span class="discount">15%</span><span class="price">219,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">카본화</span>
-<span class="pbrand">NIKE</span>
-<p class="pname">경량 카본 러닝화 03</p>
-<div class="price-row"><span class="discount">20%</span><span class="price">199,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">카본화</span>
-<span class="pbrand">adidas</span>
-<p class="pname">스피드 카본화 04</p>
-<div class="price-row"><span class="discount">12%</span><span class="price">229,000원</span></div>
-</div>
-</div>
-</div>
-</div>
-<div aria-label="스피드업 기어 레이싱화" class="product-panel" id="speed-racing-shoes" role="tabpanel">
-<div aria-label="스피드업 기어 레이싱화 상품 목록" class="product-scroll" tabindex="0">
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">레이싱화</span>
-<span class="pbrand">adidas</span>
-<p class="pname">경량 스피드 러닝화 01</p>
-<div class="price-row"><span class="discount">20%</span><span class="price">149,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">레이싱화</span>
-<span class="pbrand">ASICS</span>
-<p class="pname">템포 러닝화 02</p>
-<div class="price-row"><span class="discount">16%</span><span class="price">139,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">레이싱화</span>
-<span class="pbrand">NIKE</span>
-<p class="pname">레이싱 트레이너 03</p>
-<div class="price-row"><span class="discount">14%</span><span class="price">129,000원</span></div>
-</div>
-</div>
-</div>
-</div>
-<div aria-label="스피드업 기어 레이싱 양말" class="product-panel" id="speed-socks" role="tabpanel">
-<div aria-label="스피드업 기어 레이싱 양말 상품 목록" class="product-scroll" tabindex="0">
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">레이싱 양말</span>
-<span class="pbrand">CEP</span>
-<p class="pname">논슬립 레이싱 양말 01</p>
-<div class="price-row"><span class="discount">8%</span><span class="price">24,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">레이싱 양말</span>
-<span class="pbrand">Compressport</span>
-<p class="pname">초경량 러닝 양말 02</p>
-<div class="price-row"><span class="discount">10%</span><span class="price">21,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">레이싱 양말</span>
-<span class="pbrand">Feetures</span>
-<p class="pname">압박 레이싱 양말 03</p>
-<div class="price-row"><span class="discount">12%</span><span class="price">28,000원</span></div>
-</div>
-</div>
-</div>
-</div>
-<div aria-label="스피드업 기어 경량 웨어" class="product-panel" id="speed-lightwear" role="tabpanel">
-<div aria-label="스피드업 기어 경량 웨어 상품 목록" class="product-scroll" tabindex="0">
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">경량 웨어</span>
-<span class="pbrand">Satisfy</span>
-<p class="pname">레이싱 싱글렛 01</p>
-<div class="price-row"><span class="discount">15%</span><span class="price">39,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">경량 웨어</span>
-<span class="pbrand">SOAR</span>
-<p class="pname">초경량 러닝 쇼츠 02</p>
-<div class="price-row"><span class="discount">18%</span><span class="price">42,000원</span></div>
-</div>
-</div>
-<div class="pcard">
-<div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div>
-<div class="pbody">
-<span class="ptag">경량 웨어</span>
-<span class="pbrand">Bandit Running</span>
-<p class="pname">메쉬 러닝 탑 03</p>
-<div class="price-row"><span class="discount">12%</span><span class="price">36,000원</span></div>
-</div>
-</div>
-</div>
-</div>
+<div aria-label="스피드업 기어 카본화" class="product-panel active" id="speed-carbon" role="tabpanel"><div class="stage-product-panel"><a aria-label="adidas 레이스 데이 카본화 상품 페이지로 이동" class="ep-feature" data-feature-card="true" href="/products/speed-carbon-01"><div class="ph ep-feature-img"><span>대표 제품 이미지</span></div><div class="ep-feature-copy"><div class="ep-meta"><span class="ep-brand">adidas</span><span class="ep-dot">·</span><span class="ep-role">레이스 데이 카본화</span></div><h3 class="ep-title">기록을 의식하기 시작한 러너의 레이스 데이 선택</h3><div class="ep-tags"><span>레이스데이</span><span>기록도전</span><span>반발력</span></div></div></a><div aria-label="추천 상품 선택" class="ep-selector-row">
+<button aria-pressed="true" class="ep-selector-card active" data-brand="adidas" data-img="대표 제품 이미지" data-role="레이스 데이 카본화" data-tags="#레이스데이|#기록도전|#반발력" data-title="기록을 의식하기 시작한 러너의 레이스 데이 선택" data-url="/products/speed-carbon-01" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">adidas</div><div class="ep-selector-role">레이스 데이 카본화</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="ASICS" data-img="제품 이미지" data-role="레이스 퍼포먼스화" data-tags="#레이스기어|#페이스업|#퍼포먼스" data-title="안정감과 추진력 사이 균형을 찾는 러너에게" data-url="/products/speed-carbon-02" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">ASICS</div><div class="ep-selector-role">레이스 퍼포먼스화</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="NIKE" data-img="제품 이미지" data-role="엘리트 레이싱화" data-tags="#레이싱화|#스피드|#레이스페이스" data-title="빠른 턴오버와 레이스 감각을 원하는 순간" data-url="/products/speed-carbon-03" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">NIKE</div><div class="ep-selector-role">엘리트 레이싱화</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="adidas" data-img="제품 이미지" data-role="스피드 트레이닝화" data-tags="#스피드훈련|#템포런|#레이스준비" data-title="레이스 전 훈련까지 빠르게 이어가는 스피드 셋업" data-url="/products/speed-carbon-04" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">adidas</div><div class="ep-selector-role">스피드 트레이닝화</div></div></button></div></div></div>
+<div aria-label="스피드업 기어 레이싱화" class="product-panel" id="speed-racing-shoes" role="tabpanel"><div class="stage-product-panel"><a aria-label="adidas 스피드 트레이너 상품 페이지로 이동" class="ep-feature" data-feature-card="true" href="/products/speed-racing-shoes-01"><div class="ph ep-feature-img"><span>대표 제품 이미지</span></div><div class="ep-feature-copy"><div class="ep-meta"><span class="ep-brand">adidas</span><span class="ep-dot">·</span><span class="ep-role">스피드 트레이너</span></div><h3 class="ep-title">훈련과 레이스 사이를 빠르게 이어가는 선택</h3><div class="ep-tags"><span>템포런</span><span>스피드훈련</span><span>데일리훈련</span></div></div></a><div aria-label="추천 상품 선택" class="ep-selector-row">
+<button aria-pressed="true" class="ep-selector-card active" data-brand="adidas" data-img="대표 제품 이미지" data-role="스피드 트레이너" data-tags="#템포런|#스피드훈련|#데일리훈련" data-title="훈련과 레이스 사이를 빠르게 이어가는 선택" data-url="/products/speed-racing-shoes-01" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">adidas</div><div class="ep-selector-role">스피드 트레이너</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="ASICS" data-img="제품 이미지" data-role="템포 트레이닝화" data-tags="#템포런|#훈련화|#페이스업" data-title="데일리 훈련에서 페이스를 끌어올리고 싶다면" data-url="/products/speed-racing-shoes-02" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">ASICS</div><div class="ep-selector-role">템포 트레이닝화</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="NIKE" data-img="제품 이미지" data-role="레이싱 트레이너" data-tags="#레이싱트레이너|#스피드|#훈련" data-title="일상 훈련 속 스피드를 깨우는 러닝화" data-url="/products/speed-racing-shoes-03" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">NIKE</div><div class="ep-selector-role">레이싱 트레이너</div></div></button></div></div></div>
+<div aria-label="스피드업 기어 레이싱 양말" class="product-panel" id="speed-socks" role="tabpanel"><div class="stage-product-panel"><a aria-label="CEP 레이스 컴프레션 삭스 상품 페이지로 이동" class="ep-feature" data-feature-card="true" href="/products/speed-socks-01"><div class="ph ep-feature-img"><span>대표 제품 이미지</span></div><div class="ep-feature-copy"><div class="ep-meta"><span class="ep-brand">CEP</span><span class="ep-dot">·</span><span class="ep-role">레이스 컴프레션 삭스</span></div><h3 class="ep-title">빠른 페이스에서도 피로 누적을 관리하고 싶다면</h3><div class="ep-tags"><span>레이스기어</span><span>컴프레션</span><span>페이스유지</span></div></div></a><div aria-label="추천 상품 선택" class="ep-selector-row">
+<button aria-pressed="true" class="ep-selector-card active" data-brand="CEP" data-img="대표 제품 이미지" data-role="레이스 컴프레션 삭스" data-tags="#레이스기어|#컴프레션|#페이스유지" data-title="빠른 페이스에서도 피로 누적을 관리하고 싶다면" data-url="/products/speed-socks-01" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">CEP</div><div class="ep-selector-role">레이스 컴프레션 삭스</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="Compressport" data-img="제품 이미지" data-role="레이스 러닝 삭스" data-tags="#마찰관리|#초경량|#레이스" data-title="발의 열감과 마찰을 줄여 끝까지 밀고 나가고 싶다면" data-url="/products/speed-socks-02" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">Compressport</div><div class="ep-selector-role">레이스 러닝 삭스</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="Bandit Running" data-img="제품 이미지" data-role="레이스 크루 삭스" data-tags="#레이스룩|#러닝클럽|#스피드런" data-title="러닝 클럽 무드와 레이스 핏을 함께 가져가는 선택" data-url="/products/speed-socks-03" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">Bandit Running</div><div class="ep-selector-role">레이스 크루 삭스</div></div></button></div></div></div>
+<div aria-label="스피드업 기어 경량 웨어" class="product-panel" id="speed-lightwear" role="tabpanel"><div class="stage-product-panel"><a aria-label="Satisfy 레이스 싱글렛 상품 페이지로 이동" class="ep-feature" data-feature-card="true" href="/products/speed-lightwear-01"><div class="ph ep-feature-img"><span>대표 제품 이미지</span></div><div class="ep-feature-copy"><div class="ep-meta"><span class="ep-brand">Satisfy</span><span class="ep-dot">·</span><span class="ep-role">레이스 싱글렛</span></div><h3 class="ep-title">몸에 닿는 방해를 줄이고 러너스 하이에 집중하는 웨어</h3><div class="ep-tags"><span>레이스데이</span><span>경량웨어</span><span>러너스하이</span></div></div></a><div aria-label="추천 상품 선택" class="ep-selector-row">
+<button aria-pressed="true" class="ep-selector-card active" data-brand="Satisfy" data-img="대표 제품 이미지" data-role="레이스 싱글렛" data-tags="#레이스데이|#경량웨어|#러너스하이" data-title="몸에 닿는 방해를 줄이고 러너스 하이에 집중하는 웨어" data-url="/products/speed-lightwear-01" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">Satisfy</div><div class="ep-selector-role">레이스 싱글렛</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="SOAR" data-img="제품 이미지" data-role="초경량 레이스 쇼츠" data-tags="#초경량|#레이스키트|#스피드" data-title="기록을 노리는 날, 무게를 덜어낸 레이스 키트" data-url="/products/speed-lightwear-02" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">SOAR</div><div class="ep-selector-role">초경량 레이스 쇼츠</div></div></button>
+<button aria-pressed="false" class="ep-selector-card" data-brand="Bandit Running" data-img="제품 이미지" data-role="메쉬 러닝 탑" data-tags="#러닝클럽|#메쉬탑|#스피드런" data-title="러닝 클럽의 에너지와 퍼포먼스를 함께 입는 선택" data-url="/products/speed-lightwear-03" type="button"><div class="ph ep-selector-img"><span>제품 이미지</span></div><div class="ep-selector-copy"><div class="ep-selector-brand">Bandit Running</div><div class="ep-selector-role">메쉬 러닝 탑</div></div></button></div></div></div>
 </div>
 </div>
 </div>
@@ -943,106 +819,50 @@
 <section id="challenge">
 <div class="wrap">
 <div class="sec-head">
-<div class="sec-eyebrow">Next Challenge</div>
-<h2 class="sec-title">다음 러닝을 준비한다면</h2>
-<p class="sec-desc">러닝이 익숙해졌다면 거리, 코스, 날씨에 맞춰 장비를 확장해보세요. 장거리 러닝부터 트레일, 장마철 러닝까지 다음 목표에 필요한 기어를 모았습니다.</p>
+<div class="sec-eyebrow">Level Up</div>
+<h2 class="sec-title">레벨 업 기어</h2>
+<p class="sec-desc">10K 이상 거리, 트레일 코스, 비 오는 날처럼 러닝의 범위가 넓어질수록 필요한 기어도 달라집니다. 다음 목표에 맞춰 수납, 접지력, 발수 기능을 챙겨보세요.</p>
 </div>
 <div class="grid g3">
 <div class="card ch-card">
-<div class="ph"><span>장거리 이미지</span></div>
+<div class="kit-visual"><a aria-label="급수배낭 상품 페이지로 이동" class="kit-item main" href="/products/running-hydration-vest-01"><span>급수배낭</span></a><a aria-label="하이드레이션 상품 페이지로 이동" class="kit-item sub" href="/products/hydration-flask-01"><span>하이드레이션</span></a><a aria-label="장거리 쿠션화 상품 페이지로 이동" class="kit-item shoe" href="/products/long-distance-cushion-shoes-01"><span>장거리<br/>쿠션화</span></a></div>
 <div class="ch-body">
-<h3 class="card-title">더 오래 달리고 싶다면</h3>
-<p class="card-body">10K 이상 거리에서는 수납과 수분 보급, 발의 피로 관리가 중요합니다. 물과 에너지, 안정적인 쿠션을 챙겨 페이스가 오래 이어지도록 준비하세요.</p>
-<p class="ch-gear">#급수배낭 #하이드레이션 #장거리쿠션화</p>
-<button class="btn-small">기어 보기</button>
+<h3 class="card-title">10K를 넘어서고 싶다면</h3>
+<p class="card-body">오래 달릴수록 필요한 수납, 보급, 발의 안정감을 함께 준비하세요.</p>
 </div>
 </div>
 <div class="card ch-card">
-<div class="ph"><span>트레일 이미지</span></div>
+<div class="kit-visual"><a aria-label="트레일베스트 상품 페이지로 이동" class="kit-item main" href="/products/trail-running-vest-01"><span>트레일<br/>베스트</span></a><a aria-label="경량재킷 상품 페이지로 이동" class="kit-item sub" href="/products/light-trail-jacket-01"><span>경량재킷</span></a><a aria-label="트레일러닝화 상품 페이지로 이동" class="kit-item shoe" href="/products/trail-running-shoes-01"><span>트레일<br/>러닝화</span></a></div>
 <div class="ch-body">
-<h3 class="card-title">새로운 코스로 달리고 싶다면</h3>
-<p class="card-body">트랙 밖 코스는 노면과 경사가 달라집니다. 접지력 있는 트레일러닝화와 가벼운 보호 장비로 낯선 지형에서도 안정적으로 달려보세요.</p>
-<p class="ch-gear">#트레일러닝화 #경량재킷 #트레일베스트</p>
-<button class="btn-small">기어 보기</button>
+<h3 class="card-title">도로 밖으로 나가고 싶다면</h3>
+<p class="card-body">낯선 지형에서도 안정적으로 달리기 위한 접지력과 보호 장비를 함께 확인해보세요.</p>
 </div>
 </div>
 <div class="card ch-card">
-<div class="ph"><span>장마철 이미지</span></div>
+<div class="kit-visual"><a aria-label="발수재킷 상품 페이지로 이동" class="kit-item main" href="/products/water-repellent-jacket-01"><span>발수재킷</span></a><a aria-label="발수캡 상품 페이지로 이동" class="kit-item sub" href="/products/water-repellent-cap-01"><span>발수캡</span></a><a aria-label="접지력 러닝화 상품 페이지로 이동" class="kit-item shoe" href="/products/grip-running-shoes-01"><span>접지력<br/>러닝화</span></a></div>
 <div class="ch-body">
 <h3 class="card-title">비 오는 날에도 달리고 싶다면</h3>
-<p class="card-body">비 오는 날에는 젖은 노면과 습도, 체온 변화까지 고려해야 합니다. 발수 소재와 접지력, 빠른 건조를 기준으로 장비를 골라보세요.</p>
-<p class="ch-gear">#발수재킷 #접지력러닝화 #방수캡</p>
-<button class="btn-small">기어 보기</button>
+<p class="card-body">젖은 노면과 체온 변화까지 고려한 발수·접지 기어로 우중 러닝을 준비하세요.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
 <!-- ============================= ALL PRODUCTS ============================= -->
-<section id="all">
+<section class="alt" id="gear-more">
 <div class="wrap">
-<div class="sec-head">
-<div class="sec-eyebrow">All Products</div>
-<h2 class="sec-title">전체 상품</h2>
-<p class="sec-desc">지금 필요한 기어부터 러너들이 많이 찾는 상품까지 한 번에 확인해보세요.</p>
+<div class="cta-band">
+<div class="sec-eyebrow">More Gear</div>
+<h2 class="sec-title">단계별 추천 기어 더보기</h2>
+<p class="sec-desc">러닝화부터 웨어, 양말, 캡, 베스트까지. 지금 내 단계에 맞는 러닝 기어를 카테고리별로 이어서 탐색할 수 있습니다.</p>
+<div class="cta-band-actions">
+<a class="btn btn-primary" href="./products/">추천 기어 전체 보기</a>
 </div>
-<div class="tabs">
-<button class="tab active">전체</button>
-<button class="tab">인기 상품</button>
-<button class="tab">많이 찜한</button>
-<button class="tab">장바구니 인기</button>
-</div>
-<div class="filterbar">
-<span class="chip active">첫 러닝 기본템</span>
-<span class="chip">루틴 유지템</span>
-<span class="chip">스피드업 기어</span>
-<span class="chip">러닝화</span>
-<span class="chip">러닝웨어</span>
-<span class="chip">러닝 양말</span>
-<span class="chip">러닝캡</span>
-<span class="chip">선글라스</span>
-<span class="chip">러닝베스트</span>
-<span class="chip">카본화</span>
-</div>
-<div aria-label="전체 상품 목록" class="grid g4" id="allProducts">
-<div class="pcard"><div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div><div class="pbody"><span class="ptag">러닝화</span><span class="pbrand">HOKA</span><p class="pname">입문용 쿠션 러닝화 01</p><div class="price-row"><span class="discount">30%</span><span class="price">89,000원</span></div></div></div>
-<div class="pcard"><div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div><div class="pbody"><span class="ptag">러닝웨어</span><span class="pbrand">UVU</span><p class="pname">흡습속건 러닝 티셔츠 02</p><div class="price-row"><span class="discount">15%</span><span class="price">34,000원</span></div></div></div>
-<div class="pcard"><div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div><div class="pbody"><span class="ptag">러닝 양말</span><span class="pbrand">CEP</span><p class="pname">물집 방지 러닝 양말 03</p><div class="price-row"><span class="discount">10%</span><span class="price">18,000원</span></div></div></div>
-<div class="pcard"><div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div><div class="pbody"><span class="ptag">러닝캡</span><span class="pbrand">Alex Zono</span><p class="pname">통기성 러닝 캡 04</p><div class="price-row"><span class="discount">12%</span><span class="price">24,000원</span></div></div></div>
-<div class="pcard"><div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div><div class="pbody"><span class="ptag">선글라스</span><span class="pbrand">Oakley</span><p class="pname">경량 러닝 선글라스 05</p><div class="price-row"><span class="discount">18%</span><span class="price">49,000원</span></div></div></div>
-<div class="pcard"><div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div><div class="pbody"><span class="ptag">러닝베스트</span><span class="pbrand">Salomon</span><p class="pname">급수배낭 러닝베스트 06</p><div class="price-row"><span class="discount">15%</span><span class="price">72,000원</span></div></div></div>
-<div class="pcard"><div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div><div class="pbody"><span class="ptag">카본화</span><span class="pbrand">adidas</span><p class="pname">카본 플레이트 레이싱화 07</p><div class="price-row"><span class="discount">18%</span><span class="price">189,000원</span></div></div></div>
-<div class="pcard"><div class="ph pimg"><span>제품 이미지</span><span class="wish">♡</span></div><div class="pbody"><span class="ptag">레이싱 양말</span><span class="pbrand">CEP</span><p class="pname">논슬립 레이싱 양말 08</p><div class="price-row"><span class="discount">8%</span><span class="price">24,000원</span></div></div></div>
-</div>
-<div style="text-align:center;margin-top:36px;">
-<button class="btn btn-secondary">상품 더 보기</button>
 </div>
 </div>
 </section>
+
 <script>
-  const getScrollTarget = (button) => {
-    if (button.dataset.scrollTarget) {
-      return document.getElementById(button.dataset.scrollTarget);
-    }
-    if (button.dataset.scrollScope) {
-      const scope = document.querySelector(`[data-product-scope="${button.dataset.scrollScope}"]`);
-      return scope ? scope.querySelector('.product-panel.active .product-scroll') : null;
-    }
-    return null;
-  };
-
-  document.querySelectorAll('[data-scroll-target], [data-scroll-scope]').forEach((button) => {
-    button.addEventListener('click', () => {
-      const target = getScrollTarget(button);
-      if (!target) return;
-      const direction = button.dataset.dir === 'prev' ? -1 : 1;
-      const card = target.querySelector('.pcard');
-      const gap = 24;
-      const amount = card ? card.offsetWidth + gap : 300;
-      target.scrollBy({ left: direction * amount, behavior: 'smooth' });
-    });
-  });
-
   document.querySelectorAll('[data-panel-target]').forEach((tab) => {
     tab.addEventListener('click', () => {
       const group = tab.dataset.panelGroup;
@@ -1055,13 +875,13 @@
       scope.querySelectorAll('.product-panel').forEach((panel) => {
         panel.classList.toggle('active', panel.id === targetId);
       });
-      const activeScroll = scope.querySelector('.product-panel.active .product-scroll');
-      if (activeScroll) activeScroll.scrollTo({ left: 0, behavior: 'smooth' });
+      const activeSelectorRow = scope.querySelector('.product-panel.active .ep-selector-row');
+      if (activeSelectorRow) activeSelectorRow.scrollTo({ left: 0, behavior: 'smooth' });
     });
   });
 
   const stageTabs = Array.from(document.querySelectorAll('[data-stage-tab]'));
-  const stageTargets = ['hl01', 'hl02', 'hl03']
+  const stageTargets = ['hl01', 'hl02', 'hl03', 'challenge']
     .map((id) => document.getElementById(id))
     .filter(Boolean);
 
@@ -1071,24 +891,83 @@
     });
   };
 
-  stageTabs.forEach((tab) => {
-    tab.addEventListener('click', () => setActiveStage(tab.dataset.stageTab));
-  });
+  const updateActiveStage = () => {
+    if (!stageTargets.length) return;
+    const sticky = document.querySelector('.sticky-stage-nav');
+    const stickyHeight = sticky ? sticky.offsetHeight : 0;
+    const checkpoint = window.scrollY + stickyHeight + window.innerHeight * 0.3;
 
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      const visible = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-      if (visible) setActiveStage(visible.target.id);
-    }, {
-      root: null,
-      rootMargin: '-35% 0px -55% 0px',
-      threshold: [0, 0.2, 0.5, 0.8]
+    let currentId = stageTargets[0].id;
+    stageTargets.forEach((section) => {
+      if (section.offsetTop <= checkpoint) {
+        currentId = section.id;
+      }
     });
 
-    stageTargets.forEach((section) => observer.observe(section));
+    setActiveStage(currentId);
+  };
+
+  stageTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      setActiveStage(tab.dataset.stageTab);
+    });
+  });
+
+  window.addEventListener('scroll', updateActiveStage, { passive: true });
+  window.addEventListener('resize', updateActiveStage);
+  updateActiveStage();
+</script>
+<script>
+(function(){
+  function updateFeature(panel, trigger){
+    const feature = panel.querySelector('[data-feature-card]');
+    if(!feature || !trigger) return;
+
+    const brand = trigger.dataset.brand || '';
+    const role = trigger.dataset.role || '';
+    const title = trigger.dataset.title || '';
+    const tags = (trigger.dataset.tags || '').split('|').filter(Boolean);
+    const imgLabel = trigger.dataset.img || '대표 제품 이미지';
+    const url = trigger.dataset.url || '#';
+
+    const brandEl = feature.querySelector('.ep-brand');
+    const roleEl = feature.querySelector('.ep-role');
+    const titleEl = feature.querySelector('.ep-title');
+    const tagsEl = feature.querySelector('.ep-tags');
+    const imgEl = feature.querySelector('.ep-feature-img span');
+
+    feature.setAttribute('href', url);
+    feature.setAttribute('aria-label', (brand + ' ' + role + ' 상품 페이지로 이동').trim());
+
+    if(brandEl) brandEl.textContent = brand;
+    if(roleEl) roleEl.textContent = role;
+    if(titleEl) titleEl.textContent = title;
+    if(imgEl) imgEl.textContent = imgLabel;
+
+    if(tagsEl){
+      tagsEl.innerHTML = '';
+      tags.forEach(function(tag){
+        const span = document.createElement('span');
+        span.textContent = tag.replace(/^#/, '');
+        tagsEl.appendChild(span);
+      });
+    }
+
+    panel.querySelectorAll('.ep-selector-card').forEach(function(card){
+      const isActive = card === trigger;
+      card.classList.toggle('active', isActive);
+      card.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
   }
+
+  document.querySelectorAll('.stage-product-panel').forEach(function(panel){
+    panel.querySelectorAll('.ep-selector-card').forEach(function(card){
+      card.addEventListener('click', function(){
+        updateFeature(panel, card);
+      });
+    });
+  });
+})();
 </script>
 </body>
 </html>
